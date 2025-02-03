@@ -1,6 +1,7 @@
 # named volumes:
-#volumes:
-#  world-db:
+# unique for this project
+volumes:
+  world-db:
 
 services:
   db:
@@ -8,7 +9,7 @@ services:
     volumes:
       # without volumes, data would be reset everytime
       # named volumes:
-      # - world-db:/var/lib/mysql
+      - world-db:/var/lib/mysql
       # local volumes
       #- ./conf/mysql:/etc/mysql/conf.d
       #- ./db/data:/var/lib/mysql
@@ -16,8 +17,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "supersecret"
       MYSQL_DATABASE: "world"
-      MYSQL_USER: "example"
-      MYSQL_PASSWORD: "example"
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
 
   web:
     # build specifies the location of a custom Dockerfile
@@ -25,6 +26,7 @@ services:
     depends_on:
       - db
     ports:
+    # host:container
       - 80:80
     volumes:
       # without volumes, data would be reset everytime
@@ -33,6 +35,14 @@ services:
     environment:
       MYSQL_HOST: "db"
       MYSQL_DATABASE: "world"
-      MYSQL_USER: "example"
-      MYSQL_PASSWORD: "example"
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
 
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=${DB_USERNAME}
+      - PMA_PASSWORD=${DB_PASSWORD}
