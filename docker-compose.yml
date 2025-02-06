@@ -1,7 +1,7 @@
 # named volumes:
 # unique for this project
 volumes:
-  world-db:
+  kprange4-db:
 
 services:
   db:
@@ -9,7 +9,7 @@ services:
     volumes:
       # without volumes, data would be reset everytime
       # named volumes:
-      - world-db:/var/lib/mysql
+      - kprange4-db:/var/lib/mysql
       # local volumes
       #- ./conf/mysql:/etc/mysql/conf.d
       #- ./db/data:/var/lib/mysql
