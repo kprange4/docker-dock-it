@@ -1,30 +1,63 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dock It</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Rancho&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        body { font-family: Lato, sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: Rancho, cursive; }
-        h1 { font-size: 5em; margin-bottom: 0; text-shadow: 0 .2rem .5rem var(--blue); }
-        .bg-black { background-color: #232323; border-bottom: 5px solid var(--blue);}
+<?php
+$title = 'Park Passport';
+include 'includes/header.php';
+?>
 
-    </style>
-</head>
-<body class="vh-100">
-<div class="d-flex align-items-start flex-column h-100">
 
-    <div class="text-center sticky-top shadow-lg p-2 w-100 text-light bg-black">
-        <h1>Dock It</h1>
-        <a href="phpinfo.php" target="content_frame" class="px-2">PHP Info</a> |
-        <a href="world.php" target="content_frame" class="px-2">The World</a>
+<div class="hero-image" style="height: 200px;">
+    <div class="row">
+        <div class="hero-text text-center">
+            <h1 class="staatliches-regular">Park Passport</h1>
+        </div>
     </div>
-    <iframe src="phpinfo.php" name="content_frame" class="w-100 flex-grow-1 border-0"></iframe>
 </div>
-</body>
-</html>
+<div class="container">
+    <div class="row">
+        <?php if (isset($_SESSION['authUser'])) { ?>
+            <div class="d-flex row mt-4 justify-content-center">
+                <div class="d-flex col-5 justify-content-end">
+                    <a href="create-account.php">
+                        <button type="button" class="btn btn-primary">Explore National Parks</button>
+                    </a>
+                </div>
+                <div class="d-flex col-1 justify-content-center">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="d-flex col-5 justify-content-start">
+                    <a href="create-account.php">
+                        <button type="button" class="btn btn-primary">View Your Passport</button>
+                    </a>
+                </div>
+            </div>
+
+        <?php } else { ?>
+        <div class="row">
+            <p class="lato-regular mt-4">Unlock the wonders of nature with Park Passport, your digital companion for
+                exploring the beauty and majesty of national parks across the globe. Whether you're a seasoned
+                outdoor enthusiast or a first-time camper, embark on unforgettable journeys and create lasting
+                memories in
+                some of the world's most breathtaking landscapes.
+            </p>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-center col-12">
+                <a href="create-account.php">
+                    <button type="button" class="btn btn-primary">Create Your Passport</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <span>Already have an account? <a href="login.php">Login</a></span>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+</div>
+</div>
+
+
+<?php
+include 'includes/footer.php';
+?>

@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.nav-content {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-content-color {
+    background-color: #A62F03;
+}
+
+.nav-wrapper {
+    height: 80px !important;
+    display: flex;
+    align-items: center;
+}
+
+#nav-mobile{
+    display: flex !important;
+    align-items: center;
+}
+
+.navbar-fixed {
+    height: 130px !important;
+}
+
+
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/national-parks1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.login-form, .create-account-form, .review-form, .park-form{
+    width: 50%;
+    padding: 3%;
+    margin: 5% auto 2% auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-sizing: content-box;
+}
+
+.login-form-inputs, .create-account-form-inputs, .review-form-inputs, .park-form-inputs {
+    width: 90%;
+    margin-left: auto ;
+    margin-right: auto;
+}
+
+.login-title, .create-account-title, .review-title, .park-title {
+    margin-bottom: 1em;
+}
+
+
+.footer-color {
+    background-color: #591902;
+}
+
+.add-review, .add-campground {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.park-review-section {
+    background-color: #F2B544;
+    padding: 1em 0 2em 0;
+    margin-bottom: 0;
+}
+
+.campground-review-section {
+    background-color: #6F7302;
+    padding: 1em 0 2em 0;
+    margin-bottom: 0;
+}
+
+.park-review-table, .campground-review-table {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 2em;
+}
+
+.park-review-table th, .park-review-table td, .campground-review-table th, .campground-review-table td{
+    padding: 1em;
+}
+
+.cutoff-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 100px;
+    max-width: 400px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card {
+    height: 600px;
+}
+
+.state-title {
+    font-size: 20px !important;
+}
+
+.selected-sort, .selected-sort:hover {
+    background-color: #591902;
+}
+
+.park-image {
+    max-width: 504px;
+    margin: 1.9466666667rem 0 1.168rem 0;
+}
+
+.btn-primary {
+    background-color: #e65100;
+}
+.btn-primary:hover {
+    background-color: #591902;
+}
+
+div.vertical-line{
+    width: 1px; /* Line width */
+    background-color: black; /* Line color */
+    height: 100%; /* Override in-line if you want specific height. */
+    float: left; /* Causes the line to float to left of content.
+        You can instead use position:absolute or display:inline-block
+        if this fits better with your design */
+}
+
+/*Fonts*/
+
+.staatliches-regular {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
