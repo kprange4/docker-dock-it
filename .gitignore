@@ -21,6 +21,6 @@
 /wordpress/wp-content/themes/*
 
 # … except our stuff.
-!/wordpress/wp-content/plugins/mailhog.php
-!/wordpress/wp-content/themes/zakra
+!/wordpress/wp-content/plugins/kp-books
+!/wordpress/wp-content/themes/kp_wpd_final
 

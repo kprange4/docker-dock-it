@@ -18,14 +18,15 @@ docker compose up -d
 ## Install and activate plugins
 ```shell
 docker exec -it dock-it-author-site-wpcli-1 bash -c " 
-wp plugin delete hello akismet ; 
-wp plugin install blockart-blocks --version=2.0.3 --activate
-wp plugin install loco-translate --version=2.6.2 --activate
-wp plugin install health-check query-monitor everest-forms --activate ;  
-wp plugin activate mailhog ;
-wp theme activate zakra ;
-wp theme delete twentytwentythree twentytwentyfour twentytwentyfive;"
+wp plugin delete hello akismet ;
+wp plugin install kp-books query-monitor health0check --activate ;
+wp theme activate kp_wpd_final ;
+wp theme delete twentytwentytwo twentytwentythree twentytwentyfour twentytwentyfive;"
 ```
+### Extra steps in the backend
+Go to Appearance > Customize > Site Identity and uncheck Display Site Title
+Also go to Appearance > Customize > Header Image and select the recent upload.
+
 
 ### WordPress
 <http://localhost>
